@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return ["de", "en", "it", "fr"].map((lng) => ({ lng }));
+}
+
 export default function Home(props: { params: { lng: string } }) {
   let photos = Array.from({ length: 6 }, (_, i) => i + 1);
 
